@@ -7,7 +7,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-[88rem] items-center justify-between px-6">
-        <div className="flex items-center lg:-ml-6">
+        <div className="flex items-center">
           <img
             alt="Auctor logo"
             className="h-auto max-h-8 w-auto object-contain"
