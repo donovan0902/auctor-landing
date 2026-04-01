@@ -433,7 +433,7 @@ function OutputGallery({
           return (
             <motion.div
               key={item.label}
-              className="pointer-events-none"
+              className="pointer-events-auto"
               animate={{ y: [0, index % 2 === 0 ? -1.5 : 1.5, 0] }}
               transition={{
                 duration: 5.6 + index * 0.4,
@@ -445,7 +445,7 @@ function OutputGallery({
                 className="flex h-[168px] rounded-[0.8rem] border border-border/85 bg-background shadow-[0_18px_34px_-28px_rgba(15,23,42,0.24)]"
               >
                 <div className="flex h-full min-h-0 flex-col">
-                <CardHeader className="px-2.5 pb-1.5 pt-2.5">
+                <CardHeader className="px-2.5 pb-1.5 pt-1.5">
                   <div className="flex items-start gap-2.5">
                     <div className="flex min-w-0 items-center gap-2.5">
                       <div className="flex size-8 shrink-0 items-center justify-center rounded-[0.8rem] border border-stone-600/18 bg-stone-600/8 text-stone-700">
