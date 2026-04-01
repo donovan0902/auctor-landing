@@ -73,9 +73,9 @@ const persistentSources: Array<SourceItem & SourceChipPosition> = [
     icon: Braces,
     label: "Engineering Conventions",
     detail: "Architecture and implementation patterns",
-    x: 1034,
-    y: 88,
-    angle: -30,
+    x: 972,
+    y: 64,
+    angle: -58,
     width: 224,
   },
   {
@@ -92,7 +92,7 @@ const persistentSources: Array<SourceItem & SourceChipPosition> = [
 const liveSourceSlots: LiveSourceSlot[] = [
   {
     x: 162,
-    y: 98,
+    y: 116,
     angle: 218,
     width: 214,
     entries: [
