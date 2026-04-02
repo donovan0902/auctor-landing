@@ -2,7 +2,7 @@ import { ContextLayer } from "./context-layer"
 
 export function Hero() {
   return (
-    <section className="px-6 pt-20 pb-8 lg:pt-24">
+    <section className="px-6 pt-20 pb-12 lg:pt-24 lg:pb-16">
       <div className="mx-auto max-w-[88rem]">
         <div className="relative">
           <div className="relative z-10 mb-6 flex justify-center text-center lg:absolute lg:left-0 lg:-top-1 lg:mb-0 lg:max-w-[42rem] lg:justify-start lg:text-left">
@@ -19,7 +19,8 @@ export function Hero() {
               </p>
             </div>
           </div>
-          <div className="lg:pt-10">
+
+          <div className="lg:pt-24">
             <ContextLayer embedded />
           </div>
         </div>

@@ -488,9 +488,9 @@ function OutputGallery({
                   ease: "easeInOut",
                 }}
               >
-                <Card className="flex h-[168px] rounded-[0.8rem] border border-border/85 bg-background shadow-[0_18px_34px_-28px_rgba(15,23,42,0.24)]">
+                <Card className="flex h-[168px] rounded-[0.8rem] border border-border/85 bg-muted/55 shadow-[0_18px_34px_-28px_rgba(15,23,42,0.24)]">
                   <div className="flex h-full min-h-0 flex-col">
-                    <CardHeader className="px-2.5 pt-1.5 pb-1.5">
+                    <CardHeader className="px-2.5 pt-1 pb-1">
                       <div className="flex items-start gap-2.5">
                         <div className="flex min-w-0 items-center gap-2.5">
                           <div className="flex size-8 shrink-0 items-center justify-center rounded-[0.8rem] border border-stone-600/18 bg-stone-600/8 text-stone-700">
@@ -517,7 +517,7 @@ function OutputGallery({
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="flex min-h-0 flex-1 px-2.5 pb-3">
+                    <CardContent className="flex min-h-0 flex-1 px-2.5 pb-2">
                       <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pr-1">
                         {item.lines.map((line, lineIndex) =>
                           (() => {
@@ -640,8 +640,8 @@ function MobileOutputCard({
   const highlightedLineIndex = tick % item.lines.length
 
   return (
-    <Card className="h-full rounded-[1rem] border border-border/85 bg-background/95 shadow-[0_16px_32px_-26px_rgba(15,23,42,0.24)]">
-      <CardHeader className="px-3 pt-3 pb-1.5">
+    <Card className="h-full rounded-[1rem] border border-border/85 bg-muted/55 shadow-[0_16px_32px_-26px_rgba(15,23,42,0.24)]">
+    <CardHeader className="px-3 pt-2.5 pb-1">
         <div className="flex items-center gap-2">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-[0.8rem] border border-stone-600/18 bg-stone-600/8 text-stone-700">
             <Icon className="size-3.5" />
@@ -669,7 +669,7 @@ function MobileOutputCard({
           </div>
         </div>
       </CardHeader>
-      <CardContent className="px-3 pb-3">
+      <CardContent className="px-3 pb-2.5">
         <div className="space-y-1.5">
           {item.lines.map((line, lineIndex) => {
             const isHighlighted = lineIndex === highlightedLineIndex
@@ -729,7 +729,7 @@ function MobileContextScene({
         <div className="grid gap-3">
           <div className="flex items-center justify-between gap-3">
             <div className="text-[11px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
-              Live context
+              Project blueprint
             </div>
             <div className="rounded-full border border-amber-700/20 bg-amber-700/8 px-2.5 py-1 text-[10px] font-medium tracking-[0.14em] text-amber-900/80 uppercase">
               Syncing now
@@ -746,7 +746,7 @@ function MobileContextScene({
 
         <div className="grid gap-2">
           <div className="text-[11px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
-            Reference docs
+            Saved inputs
           </div>
           <div className="grid grid-cols-2 gap-2">
             {persistentSources.slice(0, 4).map((item, index) => (
@@ -781,10 +781,9 @@ function MobileContextScene({
               src="/favicon.png"
             />
           </motion.div>
-          <p className="mx-auto mt-4 max-w-[20rem] text-center text-[12px] leading-relaxed text-muted-foreground">
-            Auctor turns live conversations and internal docs into structured
-            delivery artifacts as scope shifts.
-          </p>
+          <div className="mx-auto mt-4 inline-flex items-center justify-center rounded-full border border-stone-700/12 bg-background/86 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] text-foreground uppercase">
+            Project blueprint
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3">
@@ -865,6 +864,17 @@ function DesktopContextScene({
         }}
         style={{ transformOrigin: `${cx}px ${cy}px` }}
       />
+
+      <foreignObject x={46} y={700} width={220} height={40}>
+        <div className="flex h-full items-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-stone-700/12 bg-background/90 px-3 py-1.5 shadow-[0_14px_28px_-24px_rgba(15,23,42,0.24)] backdrop-blur-sm">
+            <div className="size-1.5 rounded-full bg-stone-700/65" />
+            <span className="text-[10px] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
+              Project Context
+            </span>
+          </div>
+        </div>
+      </foreignObject>
 
       {persistentSources.map((source, index) => {
         const target = persistentTargets[index]
@@ -973,19 +983,19 @@ function DesktopContextScene({
           filter: "drop-shadow(0 22px 44px rgba(72, 58, 39, 0.12))",
         }}
       />
-      <foreignObject
-        x={cx - 252}
-        y={cy - ringRadius - 36}
-        width={504}
-        height={72}
-      >
+      <foreignObject x={cx - 170} y={cy - ringRadius + 34} width={340} height={54}>
         <div className="flex h-full items-center justify-center">
-          <div className="flex size-[4rem] items-center justify-center rounded-[0.9rem] border border-stone-700/14 bg-card/96 shadow-[0_16px_34px_-24px_rgba(42,34,24,0.22)] backdrop-blur-sm">
-            <img
-              alt="Auctor favicon"
-              className="h-auto max-h-[36px] w-auto object-contain"
-              src="/favicon.png"
-            />
+          <div className="inline-flex items-center gap-2 rounded-full border border-stone-700/14 bg-card/96 px-4 py-2 shadow-[0_16px_34px_-24px_rgba(42,34,24,0.22)] backdrop-blur-sm">
+            <div className="flex size-7 items-center justify-center rounded-full border border-stone-700/12 bg-background/80">
+              <img
+                alt="Auctor favicon"
+                className="h-auto max-h-[15px] w-auto object-contain"
+                src="/favicon.png"
+              />
+            </div>
+            <span className="text-[10px] font-semibold tracking-[0.16em] text-foreground uppercase">
+              Project blueprint
+            </span>
           </div>
         </div>
       </foreignObject>
@@ -1153,16 +1163,16 @@ export function ContextLayer({ embedded = false }: { embedded?: boolean }) {
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1.5">
               <div className="size-1.5 rounded-full bg-amber-800/70" />
               <span className="text-[11px] font-medium text-muted-foreground">
-                How we do it
+                Project blueprint
               </span>
             </div>
             <h2 className="text-3xl font-semibold tracking-tight text-foreground lg:text-[2rem]">
-              From discovery to aligned delivery artifacts.
+              Project inputs become an implementation blueprint.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-              Calls, email threads, internal docs, and team knowledge all feed
-              into Auctor. It turns that context into structured requirements
-              and keeps delivery artifacts aligned as scope evolves.
+              Discovery calls, documents, and team knowledge are captured into
+              an implementation blueprint that keeps delivery artifacts aligned
+              as scope evolves.
             </p>
           </div>
         )}
