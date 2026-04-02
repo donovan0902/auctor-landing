@@ -729,7 +729,7 @@ function MobileContextScene({
         <div className="grid gap-3">
           <div className="flex items-center justify-between gap-3">
             <div className="text-[11px] font-medium tracking-[0.18em] text-muted-foreground uppercase">
-              Project blueprint
+              Project context
             </div>
             <div className="rounded-full border border-amber-700/20 bg-amber-700/8 px-2.5 py-1 text-[10px] font-medium tracking-[0.14em] text-amber-900/80 uppercase">
               Syncing now
