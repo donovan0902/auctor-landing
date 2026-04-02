@@ -1,9 +1,6 @@
 import { motion } from "framer-motion"
 
-import {
-  Card,
-  CardContent,
-} from "@workspace/ui/components/card"
+import { Card, CardContent } from "@workspace/ui/components/card"
 
 import danPortrait from "../assets/DanB.avif"
 import founderPortrait from "../assets/Willsun.avif"
@@ -45,56 +42,53 @@ function PortraitPanel({
       <div
         className={`relative w-full ${compact ? "aspect-[4/5] min-h-[20rem] md:min-h-[22rem]" : "aspect-[4/5] min-h-[26rem]"}`}
       >
-        <img
-          alt={alt}
-          className="h-full w-full object-cover"
-          src={src}
-        />
+        <img alt={alt} className="h-full w-full object-cover" src={src} />
       </div>
     </Card>
+  )
+}
+
+function TrustedByLogos() {
+  return (
+    <div className="w-full">
+      <p className="mb-4 text-[11px] font-medium tracking-[0.22em] text-muted-foreground uppercase">
+        Trusted By
+      </p>
+      <div className="grid w-full grid-cols-2 gap-4 lg:gap-5">
+        {logoPlaceholders.map((label, index) => (
+          <motion.div
+            key={`${label}-${index}`}
+            animate={{
+              opacity: [0.38, 0.92, 0.52, 0.84, 0.38],
+            }}
+            transition={{
+              duration: logoAnimationTimings[index].duration,
+              delay: logoAnimationTimings[index].delay,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+            className="mx-auto flex aspect-square w-full max-w-[9.5rem] items-center justify-center rounded-[0.9rem] border border-dashed border-border/80 bg-muted/20 px-4 text-center text-[11px] font-medium tracking-[0.16em] text-muted-foreground uppercase"
+          >
+            {label}
+          </motion.div>
+        ))}
+      </div>
+    </div>
   )
 }
 
 export function Testimonial() {
   return (
     <section className="px-6 py-14 lg:py-24">
-      <div className="mx-auto grid max-w-[88rem] gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
+      <div className="mx-auto grid max-w-[88rem] gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:grid-rows-[auto_auto] lg:items-stretch">
         <motion.div
           initial={{ opacity: 0, x: -18 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
+          className="lg:col-start-1 lg:row-start-1"
         >
-          <div className="flex h-full flex-col gap-5">
-            <PortraitPanel alt="Portrait of Dan B." src={danPortrait} />
-
-            <div className="flex flex-1 items-center">
-              <div className="w-full">
-                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                  Trusted By
-                </p>
-                <div className="grid w-full grid-cols-2 gap-4 lg:gap-5">
-                {logoPlaceholders.map((label, index) => (
-                  <motion.div
-                    key={`${label}-${index}`}
-                    animate={{
-                      opacity: [0.38, 0.92, 0.52, 0.84, 0.38],
-                    }}
-                    transition={{
-                      duration: logoAnimationTimings[index].duration,
-                      delay: logoAnimationTimings[index].delay,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                    }}
-                    className="mx-auto flex aspect-square w-full max-w-[9.5rem] items-center justify-center rounded-[0.9rem] border border-dashed border-border/80 bg-muted/20 px-4 text-center text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground"
-                  >
-                    {label}
-                  </motion.div>
-                ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <PortraitPanel alt="Portrait of Dan B." src={danPortrait} />
         </motion.div>
 
         <motion.div
@@ -102,6 +96,7 @@ export function Testimonial() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.55, delay: 0.08, ease: "easeOut" }}
+          className="lg:col-start-2 lg:row-span-2"
         >
           <div className="flex h-full flex-col gap-5">
             <Card className="flex rounded-[1.65rem] border border-border/80 bg-card shadow-[0_24px_48px_-34px_rgba(15,23,42,0.18)]">
@@ -141,7 +136,7 @@ export function Testimonial() {
                     src={founderPortrait}
                   />
                   <div>
-                    <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+                    <p className="text-[11px] font-medium tracking-[0.22em] text-muted-foreground uppercase">
                       From the Founder
                     </p>
                     <blockquote className="mt-4 text-[1rem] leading-[1.75] tracking-[-0.01em] text-foreground sm:text-[1.08rem]">
@@ -166,6 +161,16 @@ export function Testimonial() {
               </CardContent>
             </Card>
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -18 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55, delay: 0.04, ease: "easeOut" }}
+          className="lg:col-start-1 lg:row-start-2 lg:flex lg:h-full lg:items-center"
+        >
+          <TrustedByLogos />
         </motion.div>
       </div>
     </section>
