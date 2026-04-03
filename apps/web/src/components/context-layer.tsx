@@ -488,9 +488,9 @@ function OutputGallery({
                   ease: "easeInOut",
                 }}
               >
-                <Card className="flex h-[168px] rounded-[0.8rem] border border-border/85 bg-muted/55 shadow-[0_18px_34px_-28px_rgba(15,23,42,0.24)]">
+                <Card className="flex h-[168px] gap-3.5 rounded-[0.8rem] border border-border/85 bg-muted/55 py-2.5 shadow-[0_18px_34px_-28px_rgba(15,23,42,0.24)]">
                   <div className="flex h-full min-h-0 flex-col">
-                    <CardHeader className="px-2.5 pt-1 pb-1">
+                    <CardHeader className="px-2.5 pt-0.5 pb-0.5">
                       <div className="flex items-start gap-2.5">
                         <div className="flex min-w-0 items-center gap-2.5">
                           <div className="flex size-8 shrink-0 items-center justify-center rounded-[0.8rem] border border-stone-600/18 bg-stone-600/8 text-stone-700">
@@ -517,7 +517,7 @@ function OutputGallery({
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="flex min-h-0 flex-1 px-2.5 pb-2">
+                    <CardContent className="flex min-h-0 flex-1 px-2.5 pt-1 pb-1">
                       <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pr-1">
                         {item.lines.map((line, lineIndex) =>
                           (() => {
@@ -640,8 +640,8 @@ function MobileOutputCard({
   const highlightedLineIndex = tick % item.lines.length
 
   return (
-    <Card className="h-full rounded-[1rem] border border-border/85 bg-muted/55 shadow-[0_16px_32px_-26px_rgba(15,23,42,0.24)]">
-    <CardHeader className="px-3 pt-2.5 pb-1">
+    <Card className="h-full gap-3.5 rounded-[1rem] border border-border/85 bg-muted/55 py-2.5 shadow-[0_16px_32px_-26px_rgba(15,23,42,0.24)]">
+      <CardHeader className="px-3 pt-1.5 pb-0.5">
         <div className="flex items-center gap-2">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-[0.8rem] border border-stone-600/18 bg-stone-600/8 text-stone-700">
             <Icon className="size-3.5" />
@@ -669,7 +669,7 @@ function MobileOutputCard({
           </div>
         </div>
       </CardHeader>
-      <CardContent className="px-3 pb-2.5">
+      <CardContent className="px-3 pt-1 pb-1.5">
         <div className="space-y-1.5">
           {item.lines.map((line, lineIndex) => {
             const isHighlighted = lineIndex === highlightedLineIndex
