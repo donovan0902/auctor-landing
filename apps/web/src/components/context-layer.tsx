@@ -821,7 +821,11 @@ function DesktopContextScene({
   syncingDocs: boolean[]
 }) {
   return (
-    <svg viewBox="0 0 1200 760" className="h-auto w-full" fill="none">
+    <svg
+      viewBox="0 0 1200 760"
+      className="h-auto w-full overflow-visible"
+      fill="none"
+    >
       <defs>
         <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="oklch(0.82 0.014 72)" stopOpacity={0} />
@@ -865,8 +869,8 @@ function DesktopContextScene({
         style={{ transformOrigin: `${cx}px ${cy}px` }}
       />
 
-      <foreignObject x={46} y={700} width={220} height={40}>
-        <div className="flex h-full items-center">
+      <foreignObject x={664} y={-78} width={220} height={40}>
+        <div className="flex h-full w-full items-center justify-end">
           <div className="inline-flex items-center gap-2 rounded-full border border-stone-700/12 bg-background/90 px-3 py-1.5 shadow-[0_14px_28px_-24px_rgba(15,23,42,0.24)] backdrop-blur-sm">
             <div className="size-1.5 rounded-full bg-stone-700/65" />
             <span className="text-[10px] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
